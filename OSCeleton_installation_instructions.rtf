@@ -1,0 +1,85 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww8400\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 MacOSX: Requirements:\
+	1) OSX 10.6.6 or higher.\
+	2) Xcode 3.2.6\
+		From: http://developer.apple.com/devcenter/mac/index.action\
+		   http://developer.apple.com/devcenter/download.action?path=/Developer_Tools/xcode_3.2.6_and_ios_sdk_4.3__final/xcode_3.2.6_and_ios_sdk_4.3.dmg\
+		Please note that you may need to register as a mac developer (It's free!).\
+\
+INSTALLATION:\
+	1. Establish a github account (optional)\
+		https://github.com/\
+\
+	2. If not done already, install XCode 3.2.6 ios sdk 4.3, requires OSX 10.6.6\
+		This will take the most time. 4.1GB download, and 10GB of free HD space required.\
+\
+	3. Download & install MacPorts\
+		http://distfiles.macports.org/MacPorts/MacPorts-1.9.2-10.6-SnowLeopard.dmg\
+		in Terminal these commands must be run from the home directory of the user.\
+		a) Run: sudo port install libtool\
+		b) Run: sudo port install libusb-devel +universal	\
+			To fully complete your installation and make python 2.7 the default,  please run:\
+ 				sudo port install python_select\
+ 				sudo python_select python27\
+\
+	4. Download & install OpenNI Unstable for MaxOSX 10.6 Universal v.1.1.x.x\
+		my Version was v1.1.0.41 (April 18, 2011) \
+		http://www.openni.org/downloadfiles/openni-binaries/20-latest-unstable\
+		in Terminal, go to OpenNI file directory (cd commands) ran sudo ./install.sh\
+\
+	5. Download & install avin2's SensorKinect\
+		https://github.com/avin2/SensorKinect\
+			Building Sensor directions (from avin2 install notes):\
+		a) Go into the directory: "Platform/Linux-x86/CreateRedist".\
+		   Run the script: "./RedistMaker".\
+		   This will compile everything and create a redist package in the "Platform/Linux-x86/Redist" directory.\
+		   It will also create a distribution in the "Platform/Linux-x86/CreateRedist/Final" directory.\
+		b) Go into the directory: "Platform/Linux-x86/Redist".\
+		   Run the script: "sudo ./install.sh" (needs to run as root)\
+\
+  		   The install script copies key files to the following location:\
+		       Libs into: /usr/lib\
+		       Bins into: /usr/bin\
+		       Config files into: /usr/etc/primesense\
+		       USB rules into: /etc/udev/rules.d \
+		       Logs will be created in: /var/log/primesense\
+\
+	6. Download & install unstable NITE\
+		my Version was v-1.3.1.5 (April 18, 2011) \
+		http://www.openni.org/downloadfiles/openni-compliant-middleware-binaries/33-latest-unstable\
+		in Terminal ran sudo ./install.sh in the appropriate directory\
+		Use this license when asked during the installation: 0KOIk2JeIBYClPWVnMoRKn5cdY4=\
+\
+	7. test NiViewer and other programs to ensure data collection\
+		in Terminal to execute a file must type ./filename\
+\
+		a). Point Viewer Example - (filepath may differ)\
+		cd /Users/yourUserName/Documents/Kinect/NITE-1.3.1.5/Samples/Bin/\
+\
+		b). NIUser Tracker Example - (filepath may differ)\
+		cd /Users/yourUserName/Documents/Kinect/OpenNI-Bin-MacOSX-v1.1.0.41/Samples/Bin/Release/\
+\
+		Do not worry if you receive the warning message.:\
+	 Warning: USB events thread - failed to set priority. This might cause loss of data...\
+		from avin2 readMe Notes: \
+	* The device driver contains a thread for reading from the USB device. This thread should have high priority in order to function correctly. Each process using the device driver should have the CAP_SYS_NICE capability in order to raise thread priority. Failing to have that capability, will cause a failure in setting priority, consequently causing loss of data.\
+\
+	8. Download & install Sensebloom OSCeleton\
+		https://github.com/Sensebloom/OSCeleton\
+\
+9. Test OSCeleton with Terminal - (filepath may differ)\
+		cd /Users/yourUserName/Documents/Kinect/Sensebloom-OSCeleton-b2f3f21\
+		\
+		Note: OSCeleton's viewer does not show the skeleton view similar to the NIUser Tracker, even though skeleton data will be sent.\
+		In order to send OSC messages and see the depth viewer you'll need to execute \
+		./osceleton -q -w\
+		For a full list of executable options, please run ./osceleton -h\
+\
+	Questions?\
+		Read Avin2's and Sensebloom's documentation carefully. While not completely thorough, there is more than enough information to get you started on your Kinect journey.\
+}
