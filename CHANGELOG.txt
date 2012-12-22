@@ -1,0 +1,18 @@
+CHANGE LOG
+----------------------------------------
+v.1.2.1
+----------------------------------------
+	- Added OSC output port 57120 for use with SuperCollider.
+----------------------------------------
+v.1.2.0
+----------------------------------------
+	- Fixed issue with joint parsing. Again, by default, OSCeleton build -7307683 no longer uses -q mode.  Do not use -q mode for sending joint coordinates.  However, do use -q mode for the previous build -b2f3f21
+	- Removed jit.freenect.  Was confusing users about operation.  Only added benefit was remote tilt control.
+----------------------------------------
+v.1.1.0
+----------------------------------------
+	- Added OSCeleton versions for two builds that use two different joint parsing methods.  Older build requires -q mode, while the new build does not.
+----------------------------------------
+v.1.0.0
+----------------------------------------
+	- Initial release
